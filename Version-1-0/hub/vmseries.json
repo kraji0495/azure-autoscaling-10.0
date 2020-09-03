@@ -184,7 +184,7 @@
         "ipConfigNametrust": "[concat('ipconfigtrust', variables('namingInfix'))]",
         "ipConfigNamemgmt": "[concat('ipconfigmgmt', variables('namingInfix'))]",
         "imagePublisher": "paloaltonetworks",
-        "imageOffer" : "vmseries-flex",
+        "imageOffer" : "vmseries1",
         "version" : "latest",
         "location": "[resourceGroup().location]",
         "resourceGroupName": "[resourceGroup().name]",
@@ -234,11 +234,6 @@
                 "tier": "Standard",
                 "capacity": "[parameters('vmScaleSetMinCount')]"
             },
-            "plan": {
-                 "name": "[parameters('vmSku')]",
-                 "product": "[variables('imageOffer')]",
-                 "publisher": "[variables('imagePublisher')]"
-            },
             "properties": {
                 "overprovision": "false",
                 "singlePlacementGroup": "false",
@@ -257,10 +252,7 @@
                         },
                         "dataDisks": [],
                         "imageReference": {
-                            "publisher": "[variables('imagePublisher')]",
-                            "offer": "[variables('imageOffer')]",
-                            "sku": "[parameters('vmSku')]",
-                            "version": "[parameters('imageVersion')]"
+                            "id": "/subscriptions/1adc902d-2621-40cb-8109-6ab72c2c26c8/resourceGroups/pavmqa-automation-img/providers/Microsoft.Compute/images/PA-VM-AZR-10.0.0"
                         }
                     },
                     "osProfile": {
