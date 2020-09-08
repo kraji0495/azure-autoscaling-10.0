@@ -113,7 +113,10 @@
                 "centralkorea",
                 "northswitzerland",
                 "southuk"
-            ]
+            ],
+		"metadata": {
+                "description": "app insights region"
+            }
 
         },
         "firewallVmSize": {
