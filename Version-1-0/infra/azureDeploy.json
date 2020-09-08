@@ -79,7 +79,7 @@
                     },
                     "apiVersion": {
                         "value": "[variables('serviceBusApiVersion')]"
-                    },
+                    }
                 }
             }
         },
