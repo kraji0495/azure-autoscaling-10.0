@@ -40,40 +40,6 @@
             "metadata": {
                 "description": "The name of the Service Bus that the Panorama subscribes to receive notifications from Azure. The value must be between 6 and 50 characters long. The namespace can contain only letters, numbers, and hyphens. The namespace must start with a letter, and it must end with a letter or number.This name has to be globally unique."
             }
-        },
-        "appInsightsRegion": {
-            "type" : "string",
-            "defaultValue" : "eastus",
-            "allowedValues": [
-                "centralcanada",
-                "centralus",
-                "eastus",
-                "eastus2",
-                "northcentralus",
-                "southcentralus",
-                "westus",
-                "westus2",
-                "northsouthafrica",
-                "eastasia",
-                "southeastasia",
-                "eastaustralia",
-                "southeastaustralia",
-                "arizonagovus",
-                "virginiagovus",
-                "southbrazil",
-                "eastchina2",
-                "northeurope",
-                "westeurope",
-                "centralfrance",
-                "centralindia",
-                "eastjapan",
-                "centralkorea",
-                "northswitzerland",
-                "southuk"
-            ],
-            "metadata": {
-                "description": "app insights region."
-            }
         }
     },
     "variables": {
@@ -114,9 +80,6 @@
                     "apiVersion": {
                         "value": "[variables('serviceBusApiVersion')]"
                     },
-                    "appInsightsRegion":{
-                        "value": "[parameters('appInsightsRegion')]"
-                    }
                 }
             }
         },
