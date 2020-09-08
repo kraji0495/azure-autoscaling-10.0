@@ -127,8 +127,10 @@
                 "centralkorea",
                 "northswitzerland",
                 "southuk"
-            ]
-
+            ],
+            "metadata": {
+                "description": "app insights region"
+            }
         },
         "vmSeriesFirewallVmSize": {
              "type": "string",
