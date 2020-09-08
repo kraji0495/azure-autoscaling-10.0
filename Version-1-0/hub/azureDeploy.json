@@ -281,7 +281,10 @@
                 "parameters": {
                     "appInsightsName": {
                         "value": "[variables('appInsightsName')]"
-                    }
+                    },
+					"appInsightsRegion": {
+						"value": "[parameters('appInsightsRegion')]"
+					}
                 }
             }
         },
@@ -495,9 +498,6 @@
                     },
                     "appInsightsName": {
                         "value": "[variables('appInsightsName')]"
-                    },
-                    "appInsightsRegion":{
-                        "value": "[parameters('appInsightsRegion')]"
                     },
                     "autoScaleMetric": {
                         "value": "[parameters('autoScaleMetric')]"
