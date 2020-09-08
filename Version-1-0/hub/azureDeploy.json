@@ -114,7 +114,7 @@
                 "northswitzerland",
                 "southuk"
             ],
-		"metadata": {
+	    "metadata": {
                 "description": "app insights region"
             }
 
