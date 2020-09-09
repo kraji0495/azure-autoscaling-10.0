@@ -296,7 +296,7 @@
                     "appInsightsName": {
                         "value": "[variables('appInsightsName')]"
                     },
-                    "appInsightsRegion": {
+                    "location": {
                         "value": "[parameters('appInsightsRegion')]"
                     }
                 }
