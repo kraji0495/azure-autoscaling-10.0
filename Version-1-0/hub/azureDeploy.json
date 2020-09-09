@@ -282,9 +282,9 @@
                     "appInsightsName": {
                         "value": "[variables('appInsightsName')]"
                     },
-					"appInsightsRegion": {
-						"value": "[parameters('appInsightsRegion')]"
-					}
+		    "location": {
+			"value": "[parameters('appInsightsRegion')]"
+		    }
                 }
             }
         },
