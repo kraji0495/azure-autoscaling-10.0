@@ -35,7 +35,7 @@
         },
         "vmScaleSetMinCount": {
             "type": "int",
-            "defaultValue": 1, 
+            "defaultValue": 2, 
             "metadata": {
                 "description": "The minimum (and default) number of FWs that will be deployed into the VM Scale Set."
             }
@@ -63,7 +63,7 @@
             "type": "string",
             "allowedValues": [
                 "latest",
-                "8.1.0"
+                "9.1.3"
             ],
             "defaultValue": "latest",
             "metadata": {
@@ -150,14 +150,14 @@
         },
         "scaleInThreshold": {
             "type": "int",
-            "defaultValue": 20,
+            "defaultValue": 2000,
             "metadata": {
                 "description": "The Threshold below which FW VM scale in kicks in."
             }
         },
         "scaleOutThreshold": {
             "type": "int",
-            "defaultValue": 80,
+            "defaultValue": 32000,
             "metadata": {
                 "description": "The Threshold above which FW VM scale out kicks in."
             }
@@ -184,7 +184,7 @@
         "ipConfigNametrust": "[concat('ipconfigtrust', variables('namingInfix'))]",
         "ipConfigNamemgmt": "[concat('ipconfigmgmt', variables('namingInfix'))]",
         "imagePublisher": "paloaltonetworks",
-        "imageOffer" : "vmseries1",
+        "imageOffer" : "vmseries-flex",
         "version" : "latest",
         "location": "[resourceGroup().location]",
         "resourceGroupName": "[resourceGroup().name]",

@@ -91,11 +91,45 @@
             "type": "string",
             "allowedValues": [
                 "latest",
-                "8.1.0"
+                "9.1.3"
             ],
             "defaultValue": "latest",
             "metadata": {
                 "description": "PAN OS Version"
+            }
+        },
+        "appInsightsRegion": {
+            "type" : "string",
+            "defaultValue" : "eastus",
+            "allowedValues": [
+                "centralcanada",
+                "centralus",
+                "eastus",
+                "eastus2",
+                "northcentralus",
+                "southcentralus",
+                "westus",
+                "westus2",
+                "northsouthafrica",
+                "eastasia",
+                "southeastasia",
+                "eastaustralia",
+                "southeastaustralia",
+                "arizonagovus",
+                "virginiagovus",
+                "southbrazil",
+                "eastchina2",
+                "northeurope",
+                "westeurope",
+                "centralfrance",
+                "centralindia",
+                "eastjapan",
+                "centralkorea",
+                "northswitzerland",
+                "southuk"
+            ],
+            "metadata": {
+                "description": "app insights region"
             }
         },
         "vmSeriesFirewallVmSize": {
@@ -163,7 +197,7 @@
         },
         "vmScaleSetMinCount": {
             "type": "int",
-            "defaultValue": 1,
+            "defaultValue": 2,
             "metadata": {
                 "description": "The minimum (and default) number of VM-Series firewall(s) to deploy in the VM Scale Set."
             }
@@ -193,14 +227,14 @@
         },
         "scaleInThreshold": {
             "type": "int",
-            "defaultValue": 20,
+            "defaultValue": 2000,
             "metadata": {
                 "description": "The threshold below which the VM-Series firewall is scaled in."
             }
         },
         "scaleOutThreshold": {
             "type": "int",
-            "defaultValue": 80,
+            "defaultValue": 32000,
             "metadata": {
                 "description": "The threshold above which the VM-Series firewall is scaled out."
             }
@@ -223,7 +257,7 @@
         "appGatewaySubnetName" : "[concat(parameters('virtualNetworkName'), '-appgw-subnet')]",
         "LoadBalancerType" : "layer-7",
         "firewallVmCount" : 2,
-        "baseUrl" : "https://raw.githubusercontent.com/rpidaparth/azure-autoscaling/master/Version-1-0/inbound",
+        "baseUrl" : "https://raw.githubusercontent.com/dbhandiwadra/azure-autoscaling-10.0/master/Version-1-0/inbound",
         "nsgURL" : "[concat(variables('baseUrl'),'/nsg-new.json')]",
         "vnetURL" : "[concat(variables('baseUrl'),'/deployVnet.json')]",
         "publicLBURL" : "[concat(variables('baseUrl'),'/public-lb-', variables('LoadBalancerType'), '.json')]",
@@ -261,6 +295,9 @@
                 "parameters": {
                     "appInsightsName": {
                         "value": "[variables('appInsightsName')]"
+                    },
+                    "appInsightsRegion": {
+                        "value": "[parameters('appInsightsRegion')]"
                     }
                 }
             }
@@ -607,10 +644,6 @@
         },
         "InboundFwLoadBalancerIP": {
             "value": "[parameters('fwLoadBalancerIP')]",
-            "type": "string"
-        },
-        "AppInsightsInstrumentationKey": {
-            "value": "[reference('SetupAppInsights').outputs.instrumentationKey.value]",
             "type": "string"
         }
     }
