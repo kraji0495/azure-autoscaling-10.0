@@ -84,38 +84,6 @@
                 "description": "byol = Bring Your Own License; bundle1 = Bundle 1 PAYG (Hourly); bundle2 = Bundle 2 PAYG (Hourly)"
             }
         },
-        "appInsightsRegion": {
-            "type" : "string",
-            "defaultValue" : "eastus",
-            "allowedValues": [
-                "centralcanada",
-                "centralus",
-                "eastus",
-                "eastus2",
-                "northcentralus",
-                "southcentralus",
-                "westus",
-                "westus2",
-                "northsouthafrica",
-                "eastasia",
-                "southeastasia",
-                "eastaustralia",
-                "southeastaustralia",
-                "arizonagovus",
-                "virginiagovus",
-                "southbrazil",
-                "eastchina2",
-                "northeurope",
-                "westeurope",
-                "centralfrance",
-                "centralindia",
-                "eastjapan",
-                "centralkorea",
-                "northswitzerland",
-                "southuk"
-            ]
-
-        },
         "firewallVmSize": {
             "type": "string",
             "allowedValues": [
@@ -183,7 +151,7 @@
 		},
         "vmScaleSetMinCount": {
             "type": "int",
-            "defaultValue": 2,
+            "defaultValue": 1,
             "metadata": {
                 "description": "The minimum (and default) number of VM-Series firewall(s) to deploy in the VM Scale Set."
             }
@@ -214,14 +182,14 @@
  
         "scaleInThreshold": {
             "type": "int",
-            "defaultValue": 2000,
+            "defaultValue": 20,
             "metadata": {
                 "description": "The threshold below which the VM-Series firewall is scaled in."
             }
         },
         "scaleOutThreshold": {
             "type": "int",
-            "defaultValue": 32000,
+            "defaultValue": 80,
             "metadata": {
                 "description": "The threshold above which the VM-Series firewall is scaled out."
             }
@@ -235,7 +203,7 @@
     },
     
     "variables": {
-        "baseUrl" : "https://raw.githubusercontent.com/dbhandiwadra/azure-autoscaling-10.0/master/Version-1-0/hub",
+        "baseUrl" : "https://raw.githubusercontent.com/MihailaAlex/azure-autoscaling-10.0/9.1-PA-VM/Version-1-0/hub",
         "deployNsgURL"         : "[concat(variables('baseUrl'),'/deployNsg.json')]",
         "deployVnetURL"        : "[concat(variables('baseUrl'),'/deployVnet.json')]",
         "deployLoadBalancerURL": "[concat(variables('baseUrl'),'/deployLoadBalancer.json')]",
@@ -460,9 +428,6 @@
                     "vmSku": {
                          "value": "[parameters('firewallModel')]"
                     },
-                    "imageVersion": { 
-                        "value": "[parameters('imageVersion')]"
-                    },
                     "adminUsername": {
                          "value": "[parameters('username')]"
                     },
@@ -492,9 +457,6 @@
                     },
                     "appInsightsName": {
                         "value": "[variables('appInsightsName')]"
-                    },
-                    "appInsightsRegion":{
-                        "value": "[parameters('appInsightsRegion')]"
                     },
                     "autoScaleMetric": {
                         "value": "[parameters('autoScaleMetric')]"
