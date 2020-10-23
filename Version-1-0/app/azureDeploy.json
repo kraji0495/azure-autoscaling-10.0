@@ -111,7 +111,7 @@
         "trustedSubnetName" : "[concat(parameters('virtualNetworkName'), '-trust-subnet')]",
         "backendSubnetName" : "[concat(parameters('virtualNetworkName'), '-backend-subnet')]",
         "internalLoadBalancerName" : "myPrivateLB",
-        "baseUrl" : "https://raw.githubusercontent.com/rpidaparth/azure-autoscaling/master/Version-1-0/app",
+        "baseUrl" : "https://raw.githubusercontent.com/MihailaAlex/azure-autoscaling-10.0/master/Version-1-0/app",
         "nsgURL" : "[concat(variables('baseUrl'),'/nsg-new.json')]",
         "appVnetURL" : "[concat(variables('baseUrl'),'/deployAppVnet.json')]",
         "privateLBURL" : "[concat(variables('baseUrl'),'/private-lb-password.json')]",

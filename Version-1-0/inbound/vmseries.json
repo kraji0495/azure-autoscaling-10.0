@@ -261,7 +261,7 @@
                             "offer": "[variables('imageOffer')]",
                             "sku": "[parameters('vmSku')]",
                             "version": "[parameters('imageVersion')]"
-                        }
+                       }
                     },
                     "osProfile": {
                         "computerNamePrefix": "[concat('pavm', variables('namingInfix'))]",

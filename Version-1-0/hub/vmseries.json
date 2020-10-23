@@ -260,7 +260,7 @@
                             "publisher": "[variables('imagePublisher')]",
                             "offer": "[variables('imageOffer')]",
                             "sku": "[parameters('vmSku')]",
-                            "version": "[parameters('imageVersion')]"
+                            "version": "[parameters('imageVersion')]"                        
                         }
                     },
                     "osProfile": {
