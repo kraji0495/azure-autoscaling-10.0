@@ -257,10 +257,7 @@
                         },
                         "dataDisks": [],
                         "imageReference": {
-                            "publisher": "[variables('imagePublisher')]",
-                            "offer": "[variables('imageOffer')]",
-                            "sku": "[parameters('vmSku')]",
-                            "version": "[parameters('imageVersion')]"
+			    "id": "/subscriptions/1adc902d-2621-40cb-8109-6ab72c2c26c8/resourceGroups/kraji-images/providers/Microsoft.Compute/images/700image-northcentralus"
                         }
                     },
                     "osProfile": {
