@@ -237,7 +237,7 @@
     },
     
     "variables": {
-        "baseUrl" : "https://raw.githubusercontent.com/dbhandiwadra/azure-autoscaling-10.0/master/Version-1-1/hub",
+        "baseUrl" : "https://raw.githubusercontent.com/kraji0495/azure-autoscaling-10.0/vhd_10.0.3_custom_image/Version-1-1/hub",
         "deployNsgURL"         : "[concat(variables('baseUrl'),'/deployNsg.json')]",
         "deployVnetURL"        : "[concat(variables('baseUrl'),'/deployVnet.json')]",
         "deployLoadBalancerURL": "[concat(variables('baseUrl'),'/deployLoadBalancer.json')]",
