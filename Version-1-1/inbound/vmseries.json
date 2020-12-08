@@ -234,11 +234,11 @@
                 "tier": "Standard",
                 "capacity": "[parameters('vmScaleSetMinCount')]"
             },
-       #     "plan": {
-       #          "name": "[parameters('vmSku')]",
-       #          "product": "[variables('imageOffer')]",
-       #          "publisher": "[variables('imagePublisher')]"
-       #     },
+            "plan": {
+                 "name": "[parameters('vmSku')]",
+                 "product": "[variables('imageOffer')]",
+                 "publisher": "[variables('imagePublisher')]"
+            },
             "properties": {
                 "overprovision": "false",
                 "singlePlacementGroup": "false",
